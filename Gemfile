@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'devise'
+gem 'rmagick'
+gem 'carrierwave'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
