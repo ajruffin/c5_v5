@@ -10,9 +10,9 @@ C5devV5::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   
     devise_scope :business do
-    get 'register', to: 'devise/registrations#new', as: :register
-    get 'login', to: 'devise/sessions#new', as: :login
-    get 'logout', to: 'devise/sessions#destroy', as: :logout
+      get 'register', to: 'devise/registrations#new', as: :businessregister
+      get 'login', to: 'devise/sessions#new', as: :businesslogin
+      get 'logout', to: 'devise/sessions#destroy', as: :businesslogout
   end
   get '/:id', to: 'profiles#show'
   # You can have the root of your site routed with "root"
