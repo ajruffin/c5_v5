@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

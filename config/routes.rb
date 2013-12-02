@@ -1,4 +1,5 @@
 C5devV5::Application.routes.draw do
+  devise_for :businesses
   get "welcome/index"
   get "welcome/about"
   get "welcome/contact"
