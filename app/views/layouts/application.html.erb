@@ -7,6 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+   <nav class="navbar navbar-custom navbar-static-top" role="navigation">
+           <div class ="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="glyphicon glyphicon-star" style="color:white"></span>
+    </button>
+    <a class="navbar-brand" href="/">C5</a>
+  </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="nav-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to "About", welcome_about_path %></li>
+      <li><%= link_to "Contact", welcome_contact_path %></li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
 <div id="user-widget">
   <% if current_user %>
     Welcome <strong><%= current_user.name %></strong>!
@@ -14,10 +36,19 @@
   <% else %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
   <% end %>
-   <p class="notice"><%= notice %></p>                                                                                                                                                                                                     
-       <p class="alert"><%= alert %></p> 
 </div>
+    </ul>
+             </div>
+  </div><!-- /.navbar-collapse -->
+</nav>
+      <div class ="container">
+      <% flash.each do |type, message| %>
+        <div class="alert <%= flash_class type %>">
+          <button class="close" data-dismiss="alert">x</button>
+        <%= message %>
+      </div>
+    <% end %>
 <%= yield %>
-
+  </div>
 </body>
 </html>
